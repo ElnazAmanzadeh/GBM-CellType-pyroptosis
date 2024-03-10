@@ -14,3 +14,20 @@ meta$col2 <- col2
 
 # Write the updated data to a new csv file
 write.csv(data2, "meta_updated.csv", row.names = FALSE)
+
+
+data <- read.csv("E:/2023-09-27-GBM-scrnaseq/data/GSE148842_RAW/GSM4483744_PW030-702.cts/seurat_meta.csv")
+
+data
+# Iterate through all rows
+
+for (i in data$seurat_clusters) {
+
+if (i == 0) {
+  # Create a list of values in column 1
+  value_list <- data$X
+  print(value_list)
+} else {
+  print("ok")
+}
+}
