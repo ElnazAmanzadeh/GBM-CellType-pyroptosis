@@ -1,0 +1,16 @@
+# Copy cell type file column and then sort the changed file based on the seurat cluster
+
+#read meta file including cell types
+labels <- read.csv("labels.csv")
+
+# Copy the second column from the first csv file
+cells <- labels[,2]
+
+
+#read seurat-meta file
+meta <- read.csv("seurat_meta.csv")
+# Add the copied column to the second csv file
+meta$col2 <- col2
+
+# Write the updated data to a new csv file
+write.csv(data2, "meta_updated.csv", row.names = FALSE)
